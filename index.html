@@ -1,0 +1,467 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INFO Photography</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#050505;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+.hero{
+  height:100vh;
+  background:
+  linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.7)),
+  url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.hero-content{
+  max-width:850px;
+}
+
+.hero h1{
+  font-size:80px;
+  font-weight:700;
+  margin-bottom:20px;
+}
+
+.hero p{
+  color:#ddd;
+  font-size:22px;
+  line-height:1.6;
+}
+
+.btns{
+  margin-top:40px;
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:16px 34px;
+  text-decoration:none;
+  border-radius:14px;
+  transition:0.4s;
+  font-weight:600;
+}
+
+.primary{
+  background:#fff;
+  color:#000;
+}
+
+.secondary{
+  border:1px solid #fff;
+  color:#fff;
+}
+
+.primary:hover,
+.secondary:hover{
+  transform:translateY(-5px);
+}
+
+.secondary:hover{
+  background:#fff;
+  color:#000;
+}
+
+section{
+  padding:100px 8%;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.title h2{
+  font-size:52px;
+  margin-bottom:10px;
+}
+
+.title p{
+  color:#aaa;
+}
+
+.about{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:60px;
+  align-items:center;
+}
+
+.about img{
+  width:100%;
+  border-radius:30px;
+  height:500px;
+  object-fit:cover;
+}
+
+.about h2{
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+.about p{
+  color:#bbb;
+  line-height:1.9;
+  font-size:17px;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  margin-top:40px;
+}
+
+.card{
+  background:rgba(255,255,255,0.06);
+  padding:30px;
+  border-radius:24px;
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.card h3{
+  font-size:42px;
+  margin-bottom:8px;
+}
+
+.gallery{
+  background:#0d0d0d;
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.gallery-item{
+  overflow:hidden;
+  border-radius:24px;
+  position:relative;
+}
+
+.gallery-item img{
+  width:100%;
+  height:340px;
+  object-fit:cover;
+  transition:0.5s;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.12);
+}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.service{
+  background:rgba(255,255,255,0.06);
+  padding:40px;
+  border-radius:26px;
+  transition:0.4s;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.service:hover{
+  transform:translateY(-10px);
+  background:#fff;
+  color:#000;
+}
+
+.service h3{
+  margin-bottom:14px;
+  font-size:28px;
+}
+
+.service p{
+  line-height:1.8;
+}
+
+.contact{
+  background:#0d0d0d;
+}
+
+.contact-box{
+  max-width:760px;
+  margin:auto;
+  background:rgba(255,255,255,0.06);
+  padding:50px;
+  border-radius:30px;
+  border:1px solid rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+}
+
+.contact-box h2{
+  font-size:48px;
+  margin-bottom:12px;
+}
+
+.contact-box p{
+  color:#bbb;
+}
+
+form{
+  margin-top:35px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+input,textarea{
+  padding:18px;
+  border:none;
+  border-radius:14px;
+  background:#1b1b1b;
+  color:#fff;
+  font-size:16px;
+  outline:none;
+}
+
+input:focus,
+textarea:focus{
+  border:1px solid #fff;
+}
+
+button{
+  border:none;
+  cursor:pointer;
+  font-size:17px;
+}
+
+.whatsapp-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  padding:15px 22px;
+  border-radius:60px;
+  text-decoration:none;
+  font-weight:600;
+  z-index:999;
+  box-shadow:0 8px 25px rgba(0,0,0,0.4);
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:#777;
+  border-top:1px solid #1d1d1d;
+}
+
+.fade{
+  opacity:0;
+  transform:translateY(50px);
+  transition:1s;
+}
+
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media(max-width:768px){
+
+.hero h1{
+  font-size:48px;
+}
+
+.hero p{
+  font-size:18px;
+}
+
+.title h2,
+.about h2,
+.contact-box h2{
+  font-size:34px;
+}
+
+.contact-box{
+  padding:30px 20px;
+}
+
+.stats{
+  grid-template-columns:1fr;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-content fade">
+    <h1>INFO PHOTOGRAPHY</h1>
+    <p>Capturing luxury wedding moments, cinematic portraits and unforgettable stories.</p>
+
+    <div class="btns">
+      <a href="#gallery" class="btn primary">Explore Gallery</a>
+      <a href="#contact" class="btn secondary">Book Now</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="about">
+    <div class="fade">
+      <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?q=80&w=1000&auto=format&fit=crop">
+    </div>
+
+    <div class="fade">
+      <h2>About Us</h2>
+
+      <p>
+        INFO Photography creates timeless wedding memories, luxury portraits,
+        cinematic reels and premium event coverage with creative storytelling.
+      </p>
+
+      <div class="stats">
+        <div class="card">
+          <h3>500+</h3>
+          <span>Projects Completed</span>
+        </div>
+
+        <div class="card">
+          <h3>10+</h3>
+          <span>Years Experience</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="title fade">
+    <h2>Our Gallery</h2>
+    <p>Beautiful moments captured forever</p>
+  </div>
+
+  <div class="gallery-grid" id="galleryGrid"></div>
+</section>
+
+<section>
+  <div class="title fade">
+    <h2>Premium Services</h2>
+  </div>
+
+  <div class="services-grid">
+
+    <div class="service fade">
+      <h3>Wedding Photography</h3>
+      <p>Luxury wedding shoots with cinematic editing and creative storytelling.</p>
+    </div>
+
+    <div class="service fade">
+      <h3>Fashion Shoots</h3>
+      <p>Modern fashion photography for brands, influencers and portfolios.</p>
+    </div>
+
+    <div class="service fade">
+      <h3>Event Coverage</h3>
+      <p>Capture every important event with professional camera production.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-box fade">
+
+    <h2>Book Your Shoot</h2>
+    <p>Fill the form and we will contact you soon.</p>
+
+    <form>
+      <input type="text" placeholder="Your Full Name" required>
+
+      <input type="email" placeholder="Your Email Address" required>
+
+      <input type="tel" placeholder="WhatsApp Number" required>
+
+      <textarea rows="5" placeholder="Tell us about your shoot"></textarea>
+
+      <button class="btn primary">
+        Send Booking Request
+      </button>
+    </form>
+
+  </div>
+</section>
+
+<a href="https://wa.me/919301280095" class="whatsapp-float" target="_blank">
+  WhatsApp Us
+</a>
+
+<footer>
+  <p>© 2025 INFO Photography — All Rights Reserved</p>
+</footer>
+
+<script>
+
+const images = [
+'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop',
+'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1200&auto=format&fit=crop',
+'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop',
+'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop',
+'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop',
+'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop'
+];
+
+const gallery = document.getElementById('galleryGrid');
+
+images.forEach(img => {
+  const div = document.createElement('div');
+  div.classList.add('gallery-item');
+  div.innerHTML = `<img src="${img}">`;
+  gallery.appendChild(div);
+});
+
+const fades = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+fades.forEach(el => observer.observe(el));
+
+</script>
+
+</body>
+</html>
